@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        *{
+            text-decoration: none;
+        }
+        .navbar{
+            background: black; font-family: sans-serif; padding-right: 15px; padding-left: 15px;
+        }
+        .navdiv{
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo a{
+            font-size: 35px; font-weight: 600; color: white;
+        }
+        li{
+            list-style: none; display: inline-block;
+        }
+        li a{
+            color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
+        }
+
+    </style>
+
+    <title>Restaurant Home</title>
+    <style>
+    {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .slideshow-container {
+            max-width: 30%; /* Adjust as needed */
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border: 5px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .slide {
+            display: none;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: center;
+        }
+        .slide.active {
+            display: block;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .dot-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dot.active {
+            background-color: #333;
+        }
+    </style>
+
+    <style type="text/css">/* Footer styles */
+footer {
+    font-family: Futura, sans-serif;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.operation-time {
+    flex: 1;
+    text-align: left;
+}
+
+.operation-time h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.operation-time p {
+    font-size: 14px;
+}
+
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-media h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f5a623; /* Color on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-media {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .operation-time {
+        margin-bottom: 10px;
+    }
+
+    .social-icon {
+        display: inline-block;
+        margin: 10px 15px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"> <a href="homepage.html"> <img src="ezologo.png">   </a></div>
+        <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="celebrity.html">Celebrities</a></li>
+            <li><a href="contactpage.html">Contact Us</a></li>
+
+        </ul>
+        
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="slide active">
+            <img src="homepagephoto1.jpg" alt="Delicious Food">
+            <div class="overlay">Savor Every Bite</div>
+        </div>
+        <div class="slide">
+            <img src="homepagephoto2.jpg" alt="Restaurant Interior">
+            <div class="overlay">A Cozy Ambiance</div>
+        </div>
+        <div class="slide">
+            <img src="homepagephoto3.jpg" alt="Refreshing Drinks">
+            <div class="overlay">Refreshing Drinks</div>
+        </div>
+    </div>
+    <div class="dot-container">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            showSlide(next);
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+<br>
+<footer>
+    <div class="footer-content">
+        <div class="operation-time">
+            <h4>Operating Hours:</h4>
+            <p>Monday - Thursday: 11:30 AM - 10:00 PM</p>
+            <p>Saturday: 11:30 AM - 11:00 PM</p>
+            <p>Sunday: 12:00pm - 9:00pm</p>
+        </div>
+
+        <div class="social-media">
+            <h4>Follow Us:</h4>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon" id="instagram">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon" id="twitter">Twitter</a>
+            <a href="https://www.yelp.com" target="_blank" class="social-icon" id="yelp">Yelp</a>
+        </div>
+    </div>
+</footer>
+</html>
