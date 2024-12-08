@@ -1,0 +1,51 @@
+/* Apply to the entire page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Create a rainbow background animation */
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 300% 300%;
+    animation: rainbow 8s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Center content container */
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the links */
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(90deg, pink, purple);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+}
